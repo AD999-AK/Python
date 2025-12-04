@@ -6,7 +6,7 @@ a common algorithm pattern for solving problems involving arrays/strings.
 """
 
 def lengthOfLongestSubstring(s: str) -> int:
-    charSet = set() #declaring an empty setv since set doesn't allow repetition of characters
+    charSet = set() #declaring an empty set since set doesn't allow repetition of characters
         #sliding window uses 2 pointer approach so (left and right)
 
     left = 0 # starting witth left=0
