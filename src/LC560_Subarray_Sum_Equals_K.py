@@ -1,16 +1,19 @@
-def subarraySum(nums: List[int], k: int) -> int:
-    prefix_sum = 0
+#LC:560 Subarray Sum equals K
+from typing import List
+def SubarraySumEqualsK(nums: List[int], k: int) -> int:
+
     count = {0:1}
+    prefix = 0
     result = 0
 
     for num in nums:
-        prefix_sum += num
-        if prefix_sum - k in count:
-            result += count[prefix_sum - k]
-        count[prefix_sum] = count.get(prefix_sum, 0) + 1
+        prefix += num
+        if prefix - k in count:
+            result += count[prefix -k]
+        count[prefix] = count.get(prefix, 0) + 1
     return result
 
 if __name__ == "__main__":
-    nums = list(map(int, input("Enter array separated by space:").split()))
-    k = int(input("Enter k:"))
-    print(subarraySum(nums, k))
+    nums = list(map(int, input("Enter the array: ").split()))
+    k = int(input("Enter the value of k: "))
+    print(SubarraySumEqualsK(nums, k))
